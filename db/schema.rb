@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2021_08_28_185929) do
 
   create_table "messages", force: :cascade do |t|
     t.string "body"
+    t.string "username"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "chat_room_id"

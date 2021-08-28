@@ -8,4 +8,4 @@
 
 room =  ChatRoom.create(title: "First One")
 
-Message.create(body: "hello", chat_room_id: room[:id])
+Message.create(body: "i have sugma :(", chat_room_id: room[:id], username: "jabroni305")
