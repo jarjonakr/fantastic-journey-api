@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: fantastic_journey_api_development
+
+test:
+  <<: *default
+  database: fantastic_journey_api_test
+
+production:
+  <<: *default
+  database: fantastic_journey_api_production
+  username: fantastic_journey_api
+  password: <%= ENV['FANTASTIC_JOURNEY_API_DATABASE_PASSWORD'] %>
+
+  default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
