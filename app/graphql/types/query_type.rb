@@ -8,6 +8,7 @@ module Types
     # They will be entry points for queries on your schema.
     field :fetch_messages, resolver: Queries::FetchMessages
     field :fetch_chat_room, resolver: Queries::FetchChatRoom
+    field :fetch_chat_room_messages, resolver: Queries::FetchChatRoomMessages
 
   end
 end
