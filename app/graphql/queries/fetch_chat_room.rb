@@ -2,10 +2,15 @@ module Queries
     class FetchChatRoom < Queries::BaseQuery
         
       type Types::ChatRoomType, null: false
-      argument :id, ID, required: true
+      argument :entry_code, String, required: true
   
-      def resolve(id:)
-        ChatRoom.find(id)
+      def resolve(entry_code:)
+
+        begin
+          ChatRoom.find_by!(entry_code: entry_code)
+        rescue ActiveRecord::RecordNotFound => e
+          GraphQL::ExecutionError.new("Chatroom does not exist")
+        end
       end
     end
 end
