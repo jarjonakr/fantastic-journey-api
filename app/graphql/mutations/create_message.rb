@@ -8,8 +8,9 @@ module Mutations
         message_params = Hash params
   
         begin
-          message = Message.create!(message_params)
-  
+          message = Message.create!(message_params).tap do |message|
+            FantasticJourneyApiSchema.subscriptions.trigger(:message_added_to_room, {chat_room_id: message_params[:chat_room_id]}, message)
+          end
           { message: message }
         rescue ActiveRecord::RecordInvalid => e
           GraphQL::ExecutionError.new("Invalid attributes for #{e.record.class}:"\
