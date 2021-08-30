@@ -57,11 +57,4 @@ class GraphqlChannel < ApplicationCable::Channel
         raise ArgumentError, "Unexpected parameter: #{ambiguous_param}"
       end
     end
-  # def subscribed
-  #   stream_from 'messages_channel'
-  # end
-
-  # def unsubscribed
-  #   # Any cleanup needed when channel is unsubscribed
-  # end
 end
