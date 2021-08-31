@@ -13,9 +13,9 @@ test:
 
 production:
   <<: *default
-  database: fantastic_journey_api_production
-  username: fantastic_journey_api
-  password: <%= ENV['FANTASTIC_JOURNEY_API_DATABASE_PASSWORD'] %>
+  database: fantastic_journey_api
+  username: andre
+  password: Rails.application.credentials.dig(:production, :db_password)
 
   default: &default
   adapter: postgresql
