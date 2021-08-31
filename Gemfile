@@ -33,13 +33,16 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
+group :development do
+  gem 'web-console', '>= 3.3.0'
+end
+
 gem 'listen', '~> 3.3'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'capistrano', '~> 3.10', require: false
 gem 'capistrano-rails', '~> 1.5', require: false
 gem 'capistrano-rbenv', '~> 2.1'
 gem 'capistrano-db-tasks', require: false
-gem 'web-console', '>= 3.3.0'
 gem 'spring-watcher-listen', '~> 2.0.0'
 gem 'spring'
 
