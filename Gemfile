@@ -33,17 +33,18 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
-group :development do
-  gem 'listen', '~> 3.3'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'capistrano', '~> 3.10', require: false
-  gem 'capistrano-rails', '~> 1.5', require: false
-  gem 'capistrano-rbenv', '~> 2.1'
-  gem 'capistrano-db-tasks', require: false
-  gem 'web-console', '>= 3.3.0'
-  gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'spring'
-end
+gem 'listen', '~> 3.3'
+# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+gem 'capistrano', '~> 3.10', require: false
+gem 'capistrano-rails', '~> 1.5', require: false
+gem 'capistrano-rbenv', '~> 2.1'
+gem 'capistrano-db-tasks', require: false
+gem 'web-console', '>= 3.3.0'
+gem 'spring-watcher-listen', '~> 2.0.0'
+gem 'spring'
+
+gem 'ed25519', '>= 1.2', '< 2.0'
+gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
