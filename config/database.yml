@@ -6,7 +6,7 @@ default: &default
 development:
   <<: *default
   database: fantastic_journey_api_development
-  username: andre
+  username: postgres
   password: <%= Rails.application.credentials[Rails.env.to_sym][:db_password] %>
 
 test:
@@ -18,8 +18,7 @@ production:
   database: fantastic_journey_api
   username: postgres
   password: <%= Rails.application.credentials[Rails.env.to_sym][:db_password] %>
-
-  default: &default
+default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
