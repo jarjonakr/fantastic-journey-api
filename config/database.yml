@@ -6,6 +6,8 @@ default: &default
 development:
   <<: *default
   database: fantastic_journey_api_development
+  username: andre
+  password: <%= Rails.application.credentials[Rails.env.to_sym][:db_password] %>
 
 test:
   <<: *default
