@@ -16,7 +16,7 @@ test:
 production:
   <<: *default
   database: fantastic_journey_api
-  username: andre
+  username: postgres
   password: <%= Rails.application.credentials[Rails.env.to_sym][:db_password] %>
 
   default: &default
