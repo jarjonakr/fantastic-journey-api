@@ -9,7 +9,7 @@ class MessageRepository
   end
 
   def create_in_room(room_id:, user:, text:)
-    Message.create!(room_id:, user: user, text: text).tap do |message|
+    Message.create!(room_id: room_id, user: user, text: text).tap do |message|
       FantasticJourneyApiSchema.subscriptions.trigger(:message_added_to_room, {room_id: room_id}, message)
     end
   end
