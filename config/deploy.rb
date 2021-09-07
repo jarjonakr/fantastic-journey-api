@@ -14,8 +14,6 @@ set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/sys
 set :keep_releases, 3
 set :keep_assets, 3
 
-set :ssh_options, { forward_agent: true, user: fetch(:user), keys: '~/home/andre/.ssh/pems/fantastic-journey-api.pem' }
-
 namespace :deploy do
   desc 'Restart application'
   task :restart do
